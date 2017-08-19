@@ -17,15 +17,27 @@ describe('Server', () => {
         .end(done);
     });
   });
+  // describe('Get /users', () => {
+  //   it('should return my user object', (done) => {
+  //     request(app)
+  //     .get('/users')
+  //     .expect(200)
+  //     .expect((res) => {
+  //       expect(res.body[1]).toInclude({
+  //         name: 'Andrew'
+  //       });
+  //     })
+  //     .end(done);
+  //   });
+  // });
   describe('Get /users', () => {
     it('should return my user object', (done) => {
       request(app)
       .get('/users')
       .expect(200)
       .expect((res) => {
-        expect(res.body[1]).toInclude({
-          name: 'Andrew',
-          age: 25
+        expect(res.body).toInclude({
+          name: 'Andrew'
         });
       })
       .end(done);
